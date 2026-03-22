@@ -21,7 +21,7 @@ Your Personal AI Fitness Coach
 - **Styling:** Tailwind CSS v4
 - **UI Components:** shadcn/ui
 - **Icons:** React Icons
-- **AI Model:** Google Generative AI (Gemini)
+- **Response System:** Hardcoded demo responses (12 goal-specific answers)
 
 ## Getting Started
 
@@ -39,13 +39,7 @@ npm install
 
 ### Environment Setup
 
-Create a `.env.local` file:
-
-```env
-GEMINI_API_KEY=your_api_key_here
-```
-
-Get your API key from [Google AI Studio](https://aistudio.google.com)
+**Note:** API integration is currently commented out. Responses are hardcoded for demo purposes. Full API integration will be implemented in future updates.
 
 ### Run Development Server
 
@@ -102,47 +96,24 @@ fitness-coach-ai/
 - **Style:** No rounded corners, no gradients, no shadows
 - **Layout:** Centered, clean, minimal design
 
+## Live Demo
+
+🌐 **[Deployment: https://fitness-ai-coach-rose.vercel.app/](https://fitness-ai-coach-rose.vercel.app/)**
+
+💻 **[GitHub: https://github.com/Rohitaa90/Fitness-AI-Coach](https://github.com/Rohitaa90/Fitness-AI-Coach)**
+
+## Response System
+
+**Demo Mode:** 12 hardcoded responses (6 weight loss, 6 muscle gain). Each suggested query returns complete fitness guidance instantly.
+
+**Future:** Full API integration with Google Gemini for production.
+
 ## Building for Production
 
 ```bash
 npm run build
-
 npm start
 ```
-
-## API Endpoint
-
-### POST `/api/chat`
-
-Send a message to the fitness coach.
-
-**Request:**
-```json
-{
-  "messages": [
-    { "role": "user", "content": "What should I eat to lose weight?" }
-  ],
-  "goal": "weight_loss"
-}
-```
-
-**Response:**
-```json
-{
-  "reply": "**Daily Calorie Intake**: 1800-2200 calories for weight loss..."
-}
-```
-
-## Troubleshooting
-
-**Issue: Connection Error**
-- Check API key in `.env.local`
-- Restart dev server (Ctrl+C then `npm run dev`)
-- Verify API quota at Google AI Studio
-
-**Issue: Navigation not working**
-- Clear browser cache
-- Hard refresh page (Ctrl + Shift + R on Windows/Linux)
 
 ## Version
 
