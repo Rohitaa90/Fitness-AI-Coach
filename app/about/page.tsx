@@ -9,7 +9,7 @@ export default function About() {
     <>
       <Header />
       <main className="min-h-screen bg-white dark:bg-zinc-950">
-        <div className="max-w-3xl mx-auto px-4 py-16">
+        <div className="max-w-7xl mx-auto px-4 py-16">
           <Badge variant="outline" className="rounded-none font-mono text-xs tracking-widest border-zinc-300 dark:border-zinc-700 text-zinc-500">
             FITCOACH AI — v1.0
           </Badge>

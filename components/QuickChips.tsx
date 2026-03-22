@@ -14,7 +14,7 @@ export default function QuickChips({ onChipClick, goal }: QuickChipsProps) {
     : QUICK_CHIPS.weight_loss
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4">
+    <div className="w-full">
       <p className="font-mono text-xs text-zinc-400 tracking-widest mb-3">SUGGESTED QUERIES</p>
       <div className="grid grid-cols-2 gap-px bg-zinc-200 dark:bg-zinc-800">
         {chips.map((chip) => (

@@ -1,6 +1,7 @@
 'use client'
 
 import { Message } from '@/lib/types'
+import { FaUser } from 'react-icons/fa'
 
 interface MessageBubbleProps {
   message: Message
@@ -62,24 +63,38 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
 
   if (message.role === 'user') {
     return (
-      <div className="px-4 py-4 bg-zinc-950 dark:bg-zinc-100">
-        <p className="font-mono text-xs text-zinc-500 dark:text-zinc-600 mb-2 text-right">
-          YOU · {time}
-        </p>
-        <p className="font-mono text-sm text-white dark:text-zinc-950 leading-relaxed text-right">
-          {message.content}
-        </p>
+      <div className="flex justify-end gap-3 items-start">
+        <div className="max-w-xs lg:max-w-md px-4 py-4 bg-zinc-950 dark:bg-zinc-100">
+          <p className="font-mono text-xs text-zinc-500 dark:text-zinc-600 mb-2">
+            YOU · {time}
+          </p>
+          <p className="font-mono text-sm text-white dark:text-zinc-950 leading-relaxed">
+            {message.content}
+          </p>
+        </div>
+        <div className="flex-shrink-0 mt-1">
+          <FaUser className="text-lg text-zinc-950 dark:text-zinc-100" />
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="px-4 py-4 bg-zinc-50 dark:bg-zinc-900 border-l-2 border-zinc-950 dark:border-zinc-100 pl-5">
-      <p className="font-mono text-xs text-zinc-400 mb-2">
-        FITCOACH · {time}
-      </p>
-      <div className="font-mono text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        {parseMessageContent(message.content)}
+    <div className="flex gap-3 items-start">
+      <div className="flex-shrink-0 mt-1">
+        <div className="w-8 h-8 rounded-none bg-zinc-950 dark:bg-zinc-100 flex items-center justify-center border border-zinc-800 dark:border-zinc-200">
+          <p className="font-mono text-xs font-bold text-white dark:text-zinc-950 tracking-tight">
+            FI
+          </p>
+        </div>
+      </div>
+      <div className="max-w-2xl flex-1 px-4 py-4 bg-zinc-50 dark:bg-zinc-900 border-l-2 border-zinc-950 dark:border-zinc-100 pl-5">
+        <p className="font-mono text-xs text-zinc-400 mb-2">
+          FITCOACH · {time}
+        </p>
+        <div className="font-mono text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          {parseMessageContent(message.content)}
+        </div>
       </div>
     </div>
   )
